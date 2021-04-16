@@ -1,0 +1,12 @@
+#lang scheme
+
+;fibonacci numbers
+
+(define (fibonacci n)
+  (cond ((= n 0) 0)
+        ((= n 1) 1)
+        (else (fibonacci (- 1 n) (- 2 n)))
+  )
+)
+
+(fibonacci 6)
