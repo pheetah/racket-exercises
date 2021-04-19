@@ -1,0 +1,32 @@
+#lang scheme
+
+(define factorial-embedded (lambda(n)
+    (if (= n 1) 1
+         (* n (factorial-embedded (- n 1)))))
+)
+
+(factorial-embedded 5)
+
+(define factorial-tail (lambda (n summary)
+    (cond ((= n 1) summary)
+          (else (factorial-tail (- n 1) (* n summary))))
+))
+
+(factorial-tail 5 1)
+
+(define factorial-iterate (lambda (low high step sum)
+                  (cond ((<= low high) (factorial-iterate (+ low step) high step (* sum low) ))
+                        (else sum)))
+)
+
+(factorial-iterate 1 5 1 1)
+
+(define factorial-iterloop (lambda (low high sum)
+        (let loop ((low low) (high high) (sum sum))
+          (cond ((> low high) sum)
+                (else
+                 (loop (+ low 1) high (* sum low))
+                 ))))
+)
+
+(factorial-iterloop 1 5 1)
