@@ -1,0 +1,18 @@
+#lang racket
+
+(define (adder x)
+  (+ x 1)
+)
+
+(define (divider x)
+  (/ x 2)
+)
+
+(define (isEven x)
+  (cond(even? x) #t)
+)
+
+;;(define (generator x y)
+;  (let loop ((l1 x) (l2 y) (l3 last))
+;   () )
+;)

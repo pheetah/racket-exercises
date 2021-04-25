@@ -1,0 +1,4 @@
+#lang scheme
+
+(define A '('a 'b 'c 'd 'e))
+(define B '(1 2 3 4))

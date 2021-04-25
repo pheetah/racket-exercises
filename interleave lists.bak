@@ -1,0 +1,11 @@
+#lang scheme
+
+;interleave lists
+
+(define interlave
+  (lambda (lst1 lst2)
+    (if (null? lst1)
+        lst2
+        (cons (car lst1) (interleave lst2 (cdr lst1)) )
+        ))
+)

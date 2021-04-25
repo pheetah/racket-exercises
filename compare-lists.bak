@@ -1,0 +1,10 @@
+#lang scheme
+
+; compare lists
+
+(define list-<
+  (lambda (l1 l2)
+    (cond (null? l1) #t)
+
+ )
+)

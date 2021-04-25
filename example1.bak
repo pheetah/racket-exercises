@@ -1,0 +1,13 @@
+(define lists-compare?
+  (lambda (l1 l2)
+    (cond ((null? l1) #t)
+      (else
+        (if (compare (car l1) (car l2))
+          (lists-compare? compare (cdr l1) (cdr l2))
+             #f)))))
+
+(define list-<
+  (lambda (l1 l2)
+    (lists-compare? < l1 l2)))
+
+(list-< '(1 2 3 4) '(2 3 4 5))
